@@ -10,3 +10,10 @@ body{
     top: 240px;
    left: 240px; 
 }
+h2{
+    margin:1.5rem;
+    text-align: center;
+}
+input{
+    margin-bottom: 1rem;
+}
