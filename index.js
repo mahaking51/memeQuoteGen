@@ -26,7 +26,17 @@ var startY;
 var texts = [];
 
 var selectedText = -1;
+function readURL(input) {
+    if (input.files && input.files[0]) {
+        var reader = new FileReader();
 
+        reader.onload = function (e) {
+            $canvas.css('background-image','url("'+e.target.result+'")');    
+        };
+
+        reader.readAsDataURL(input.files[0]);
+    }
+}
 function draw() {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
     for (var i = 0; i < texts.length; i++) {
