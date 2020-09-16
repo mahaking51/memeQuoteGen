@@ -24,7 +24,7 @@ var startX;
 var startY;
 
 var texts = [];
-
+canvas=document.getElementById('canvas')
 var selectedText = -1;
 function readURL(input) {
     if (input.files && input.files[0]) {
@@ -110,8 +110,7 @@ $('#view').click(async function(){
     }
     else{
         src =await getImage(bg);
-    
-        $canvas.css('background-image','url("'+src+'")');    
+        $canvas.css('background-image','url("'+src+'")');  
     }
 })
 $("#submit").click( function () {
@@ -134,3 +133,16 @@ $("#submit").click( function () {
     draw();
     document.getElementById('textCont').value='';
 });
+// $('#btnDown').click(function(){
+//     if(window.navigator.msSaveBlob){
+//         window.navigator.msSaveBlob(canvas,'meme.png');
+//     }
+//     else{
+//         const a= document.createElement('a');
+//         document.body.appendChild(a);
+//         a.href=canvas.toDataURL();
+//         a.download="meme.png";
+//         a.click();
+//         document.body.removeChild(a);
+//     }
+// })
